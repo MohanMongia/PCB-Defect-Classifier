@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>PCB Defect Classifier</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">PCB DEFECT CLASSIFIER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto">
+                <div class="nav-item">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </div>
+                <% if(isLoggedIn) {%> 
+                    <div class="nav-item">
+                        <a class="nav-link" href="/mainpage">Main</a>
+                    </div>
+                <% } %>
+                <% if(isLoggedIn) {%> 
+                    <div class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </div>
+                <% } %>  
+                <div class="nav-item">
+                    <a class="nav-link" href="/contact">Developers<span class="sr-only">(current)</span></a>
+                </div>
+                <div class="nav-item  active">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" href="/connect">Contact Us</a>
+                </div>
+            </div>
+            <% if(!isLoggedIn) {%> 
+                <div class="nav-item">
+                    <a class="nav-link butt" href="/login">Login</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link butt" href="/signup">Sign Up</a>
+                </div>
+            <% } else { %> 
+                <div class="nav-item">
+                    <form action="/logout" method="post">
+                        <button type='submit'>Log Out</a>
+                    </form>
+                </div>
+            <% } %> 
+        </div>
+    </nav>
+
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark row">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">Welcome To Our Blog!!</h1>
+            <p class="lead my-3">Struggling with understanding the defects in PCB and how to cure them. You are at the
+                right spot, scroll down and we hope you will get what you are looking for.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Defect 1/6</strong>
+                        <h3 class="mb-0">Spurious Copper</h3>
+                        <div class="mb-1 text-muted">30th November 2020 (Last edited)</div>
+                        <p class="card-text mb-auto">These are a cases of excessive soldering due to gassing and
+                            spitting of the flux on the surface of the wave or by solder literally bouncing back from
+                            the solder wave. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Defect 2/6</strong>
+                        <h3 class="mb-0">Spur</h3>
+                        <div class="mb-1 text-muted">30th November (Last Edited)</div>
+                        <p class="mb-auto">Similar to Spurious Copper it is caused by This is caused by excessive back
+                            flow in air or too high a drop in nitrogen environments. These are majorly due to poor
+                            process conditions with gassing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Defect 3/6</strong>
+                        <h3 class="mb-0">Mousebite</h3>
+                        <div class="mb-1 text-muted">30th November 2020 (Last edited)</div>
+                        <p class="card-text mb-auto">These are the
+                            sharp edges, what are left over after depanelization when the PCBs are manufactured in a
+                            panel using break-routing / break-off tabs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Defect 4/6</strong>
+                        <h3 class="mb-0">Pinhole</h3>
+                        <div class="mb-1 text-muted">30th November 2020 (Last edited)</div>
+                        <p class="card-text mb-auto">Pinholes are caused by moisture within the boards which are then
+                            heated into gas during the soldering operation and then escapes through the solder when it
+                            is still in a molten state. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Defect 5/6</strong>
+                        <h3 class="mb-0">Short</h3>
+                        <div class="mb-1 text-muted">30th November 2020 (Last edited)</div>
+                        <p class="card-text mb-auto">When two different nodes in the fault-free circuit are joined
+                            through some kind of low resistance “object” it is known as a short circuit. A common case
+                            is a drop of solder. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">Defect 6/6</strong>
+                        <h3 class="mb-0">Open Circuit</h3>
+                        <div class="mb-1 text-muted">30th November 2020 (Last edited)</div>
+                        <p class="card-text mb-auto">Open Connection happens when the lead and the pad don’t bond, or
+                            when the solder is
+                            only on the PCB but not on the component lead, and thus electric current stops flowing
+                            through it. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h2 class="text-center font-italic">Correction</h2>
+    <br>
+    <div class="container my-2" id="services">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="slightRounding">
+                    <h4 class="text-center font-italic">Shorts And Mousebite</h4>
+                    <br>
+                    <ul>
+                        <li>
+                            <h5 class="text-justify">Add solder mask between the pads
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Design the pads and stencil aperture to the right size.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Do not mix old and new flux together.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Adjust the solder paste printing pressure.
+
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Adjust the pressure for pick and place nozzles.
+
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Ensure there is a zero print gap between the PCB and the stencil.
+
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Clean the stencil as quickly as possible.
+
+
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <img class="slightRounding" src="/p1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container my-2">
+        <div class="row">
+            <div class="col-lg-5">
+                <img class="slightRounding" src="/p2.jpg" alt="">
+            </div>
+            <div class="col-lg-7">
+                <div>
+                    <h4 class="text-center font-italic">Spur And Spurious Copper</h4>
+                    <br>
+                    <ul>
+                        <li>
+                            <h5 class="text-justify">Design the correct pad sizes and spaces according to the
+                                recommendation specified in the datasheet.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Reflow profile – when appropriate increase the preheating
+                                temperature.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Bake the PCB before printing.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">PCB quality -- The thickness of PCB hole’s plating copper is
+                                greater than 25μm in order to avoid trapping water in the PCB.
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-2" id="services">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="">
+                    <h4 class="text-center font-italic">Open</h4>
+                    <br>
+                    <ul>
+                        <li>
+                            <h5 class="text-justify">Design the pad sizes according to the recommendation specified on
+                                the datasheet.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Reflow profile -- for lead-free solder paste, use a gradual soak
+                                ramp rate before reaching the melting point.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Adjust the pressure for pick and place nozzles.</h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Improve the accuracy of the solder paste printing.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Ensure the pick and place nozzles have been adjusted to the correct
+                                pressure.
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <img class="slightRounding" src="/p3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container my-2">
+        <div class="row">
+            <div class="col-lg-5">
+                <img class="slightRounding" src="/p4.jpg" alt="">
+            </div>
+            <div class="col-lg-7">
+                <div>
+                    <h4 class="text-center font-italic">Pinholes</h4>
+                    <br>
+                    <ul>
+                        <li>
+                            <h5 class="text-justify">Reduce the amount of solder paste deposited.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">For large pads, use small opening grids instead of a large
+                                aperture.</h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Hybrid (Combinational approach of both referenced and
+                                non-referenced).</h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Extend the preheat time so it is long enough.</h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Extend the soak zone time so it is long enough.
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 class="text-justify">Always consider new solder paste for BGA assembly.
+
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark row">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">
+                <img src="bfc.png" alt="">
+            </h1>
+        </div>
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">Current AI Development</h1>
+            <p class="lead my-3 text-justify">Our current production CNN model is based on a custom edited RESNET50V2
+                model which is
+                structured on a high level Keras Framework and is trained on a GPU with 15GB RAM and CPU with 8 GB RAM
+                available through Google Colab. The model is based on a 50 Layer Residual Network model with skip
+                connections between two or more consecutive blocks comprising of convolutional, pooling and activation
+                layers. Currently the model is open-source and is freely available to experiment on.</p>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h2 class="text-center font-italic">TECH STACK</h2>
+        <br>
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <img src="/b1.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b2.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="b3.jpg" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b4.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b5.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b6.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b7.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b8.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b9.jpg" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b10.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b11.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img src="/b12.png" class="bd-placeholder-img rounding borderColor" width="140" height="140" alt="">
+            </div><!-- /.col-lg-4 -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="p-5 mt-2" style="background-color: #E9E9E9;">
+        <div class="row">
+            <div class="col-12 col-md">
+                <h4>PCB DEFECT CLASSIFIER</h4>
+                <h5>Punjab Engineering College</h5>
+                <small class="d-block mb-3 text-muted">© 2020-2021 PCB DEFECT CLASSIFIER.
+                    Electronics And Communication Department. All Rights Reserved.</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Follow Us</h5>
+                <a class="text-muted" href="#" style="display: inline-block;"><i class="fab fa-facebook fa-2x"></i></a>
+                <a class="text-muted" href="#" style="display: inline-block;"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go To Top Button -->
+    <a class="gotopbtn" href="#"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

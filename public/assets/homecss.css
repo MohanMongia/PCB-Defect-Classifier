@@ -1,0 +1,13 @@
+section{
+	width:100%;
+	background-color: #000;
+	color: #fff;
+	float: left;
+}
+section img{
+	width: 100%;
+}
+section p{
+	text-align: center;
+	font-size: 30px;
+}

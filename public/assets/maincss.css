@@ -1,0 +1,48 @@
+section{
+	background-color: #E5E7E9;
+	border-radius: 5px;
+}
+p{
+	font-family: "Calibri";
+}
+td{
+	border: 2px solid #000;
+	border-radius: 5px;
+  	padding: 10px 15px;
+  	color: #000;
+
+  	font-family: "Calibri";
+}
+table{
+	width: 100%;
+	font-weight: bold;
+}
+.class1{
+	display: inline-block;
+	border: 1px solid #fff;
+	border-radius: 5px;
+  	padding: 10px 15px;
+  	background-color: #103242;
+  	margin-left: 5px;
+  	color: #808080;
+}
+.class2{
+	display: inline-block;
+	margin-left: 20%;
+	color: #000;
+	font-weight: bold;
+	font-size: 25px;
+}
+.class3{
+	border: 1px solid #fff;
+	border-radius: 5px;
+  	padding: 125px 35px;
+  	background-color: #808080;
+}
+.class4{
+	width: 15%;
+}
+.class1:hover{
+	color: #2C3E50;
+	background-color: #808B96;
+}

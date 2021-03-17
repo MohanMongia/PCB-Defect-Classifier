@@ -1,0 +1,48 @@
+*{
+	font-family: "Calibri";
+}
+.login_box{
+	width: 18%;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	border: 1px solid #808080;
+	border-radius: 10px;
+	padding: 8px 10px 25px 10px;
+}
+.login_box h1{
+	float: left;
+	font-size: 35px;
+	border-bottom: 5px solid #fff;
+	margin-bottom: 30px;
+	color: #fff;
+}
+.textbox{
+	width: 100%;
+	overflow: hidden;
+	font-size: 25px;
+	padding: 8px 0px;
+	margin: 8px 0px 12px 0px;
+	border-bottom: 1px solid #fff;
+}
+.textbox input{
+	border:none;
+	outline: none;
+	background: none;
+	color: #fff;
+	font-size: 20px;
+	width:100%;
+}
+.btn{
+	width: 100%;
+	background: none;
+	outline: none;
+	color: #fff;
+	border: 2px solid #fff;
+	padding: 5px;
+}
+.btn:hover{
+	background-color: #808080;
+}
